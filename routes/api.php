@@ -21,7 +21,8 @@ use App\Http\Controllers\ProductController;
 
 
 
-Route::post('/index', ['ProductController']);
-Route::group(['prefix'=>'products'],function(){
-    Route::apiResource('/{product}/reviews', 'ReviewController');
-});
+// Route::post('/index', ['ProductController']);
+Route::Resource('/products', ProductController::class);
+// Route::group(['prefix'=>'products'],function(){
+//     Route::apiResource('/{product}/reviews', 'ReviewController');
+// });
