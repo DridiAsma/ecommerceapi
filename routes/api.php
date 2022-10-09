@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,6 @@ use App\Http\Controllers\ProductController;
 
 // Route::post('/index', ['ProductController']);
 Route::Resource('/products', ProductController::class);
-// Route::group(['prefix'=>'products'],function(){
-//     Route::apiResource('/{product}/reviews', 'ReviewController');
-// });
+Route::group(['prefix'=>'products'],function(){
+    Route::apiResource('/{product}/reviews', ReviewController::class);
+});
